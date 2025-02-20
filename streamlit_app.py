@@ -21,7 +21,7 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # Model selection box
-st.selectbox("Model",options=["GPT-4o","GPT-4o mini","o3 mini"],key="temp_model")
+temp_model = st.selectbox("Model",options=["GPT-4o","GPT-4o mini","o3 mini"],key="temp_model")
 
 if temp_model == "GPT-4o":
     selected_model = "gpt-4o"

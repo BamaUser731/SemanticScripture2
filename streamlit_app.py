@@ -21,7 +21,7 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # Model selection box
-st.selectbox("Model",options=list("GPT-4o","GPT-4o mini","o3 mini"),key="selected_model")
+st.selectbox("Model",options=["GPT-4o","GPT-4o mini","o3 mini"],key="selected_model")
 
 # Create a chat input field to allow the user to enter a message. This will display
 # automatically at the bottom of the page.

@@ -8,7 +8,7 @@ st.write(
 )
 
 # Model selection box
-selected_model = st.selectbox("Model",options=["GPT-4o","GPT-4o-mini","o3-mini"],key="selected_model",label_visibility="hidden")
+selected_model = st.selectbox("Model",options=["gpt-4o","gpt-4o-mini","o3-mini"],key="selected_model",label_visibility="hidden")
 
 #if temp_model == "GPT-4o":
     #selected_model = "gpt-4o"

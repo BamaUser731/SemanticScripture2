@@ -8,14 +8,14 @@ st.write(
 )
 
 # Model selection box
-selected_model = st.selectbox("Model",options=["gpt-4o","gpt-4o-mini","o3-mini"],key="selected_model",label_visibility="hidden")
+temp_model = st.selectbox("Model",options=["standard","fast","reason"],key="temp_model",label_visibility="hidden")
 
-#if temp_model == "GPT-4o":
-    #selected_model = "gpt-4o"
-#elif temp_model == "GPT-4o mini":
-    #selected_model = "gpt-4o-mini"
-#else:
-    #selected_model = "o3-mini"
+if temp_model == "standard":
+    selected_model = "gpt-4o"
+elif temp_model == "fast":
+    selected_model = "gpt-4o-mini"
+else:
+    selected_model = "o3-mini"
 
 # Create an OpenAI client.
 client = OpenAI(api_key=st.secrets["OpenAI_API_Key"])

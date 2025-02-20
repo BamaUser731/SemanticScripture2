@@ -20,6 +20,9 @@ for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
+# Model selection box
+st.selectbox("Model",options=list("GPT-4o","GPT-4o mini","o3 mini"),key="selected_model")
+
 # Create a chat input field to allow the user to enter a message. This will display
 # automatically at the bottom of the page.
 if prompt := st.chat_input("What is up?"):
@@ -31,7 +34,7 @@ if prompt := st.chat_input("What is up?"):
 
     # Generate a response using the OpenAI API.
     stream = client.chat.completions.create(
-        model="gpt-4o",
+        model=selected_model,
         messages=[
             {"role": m["role"], "content": m["content"]}
             for m in st.session_state.messages

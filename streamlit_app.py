@@ -4,7 +4,7 @@ from openai import OpenAI
 # Show title and description.
 st.title("💬 Chatbot")
 st.write(
-    "Welcome. Test this out plz Caroline!"
+    "Welcome. Test this out plz good sir!"
 )
 
 # Create an OpenAI client.
@@ -31,7 +31,7 @@ if prompt := st.chat_input("What is up?"):
 
     # Generate a response using the OpenAI API.
     stream = client.chat.completions.create(
-        model="gpt-4o-mini",
+        model="o3-mini",
         messages=[
             {"role": m["role"], "content": m["content"]}
             for m in st.session_state.messages

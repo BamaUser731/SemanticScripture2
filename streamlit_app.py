@@ -7,6 +7,16 @@ st.write(
     "Welcome. Test this out plz good sir!"
 )
 
+# Model selection box
+temp_model = st.selectbox("Model",options=["GPT-4o","GPT-4o mini","o3 mini"],key="temp_model",label_visibility="hidden")
+
+if temp_model == "GPT-4o":
+    selected_model = "gpt-4o"
+elif temp_model == "GPT-4o mini":
+    selected_model = "gpt-4o-mini"
+else:
+    selected_model = "o3-mini"
+
 # Create an OpenAI client.
 client = OpenAI(api_key=st.secrets["OpenAI_API_Key"])
 
@@ -19,16 +29,6 @@ if "messages" not in st.session_state:
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
-
-# Model selection box
-temp_model = st.selectbox("Model",options=["GPT-4o","GPT-4o mini","o3 mini"],key="temp_model",label_visibility="hidden")
-
-if temp_model == "GPT-4o":
-    selected_model = "gpt-4o"
-elif temp_model == "GPT-4o mini":
-    selected_model = "gpt-4o-mini"
-else:
-    selected_model = "o3-mini"
 
 # Create a chat input field to allow the user to enter a message. This will display
 # automatically at the bottom of the page.

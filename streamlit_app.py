@@ -8,12 +8,12 @@ st.write(
 )
 
 # Model selection box
-temp_model = st.selectbox("Model",options=["standard (GPT-4o)","fast (GPT-4o mini)","smart (o3 mini)"],key="temp_model",label_visibility="hidden")
+temp_model = st.selectbox("Model",options=["fast (GPT-4o mini)","standard (GPT-4o)","smart (o3 mini)"],key="temp_model",label_visibility="hidden")
 
-if temp_model == "standard (GPT-4o)":
-    selected_model = "gpt-4o"
-elif temp_model == "fast (GPT-4o mini)":
+if temp_model == "fast (GPT-4o mini)":
     selected_model = "gpt-4o-mini"
+elif temp_model == "standard (GPT-4o)":
+    selected_model = "gpt-4o"
 else:
     selected_model = "o3-mini"
 
